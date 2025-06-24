@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2 - Serial Input</title>
+</head>
+
+<body>
+    <h1>Day 2</h1>
+
+    <h2>Introduction</h2>
+    <p>Today I learned how to receive input from the Serial Monitor in Arduino. This helps the Arduino interact with the
+        user by receiving commands or data typed from the computer.</p>
+
+    <h2>What I Did</h2>
+    <ul>
+        <li>Used <code>Serial.available()</code> to check if data is available</li>
+        <li>Used <code>Serial.read()</code> and <code>Serial.readStringUntil()</code> to receive data</li>
+        <li>Responded to user input by printing messages or performing actions</li>
+    </ul>
+
+    <h2>New Concepts and Functions</h2>
+    <ul>
+        <li><code>Serial.available()</code> – Returns the number of bytes available for reading</li>
+        <li><code>Serial.read()</code> – Reads the first available byte of incoming data</li>
+        <li><code>Serial.readStringUntil(char)</code> – Reads characters from the serial buffer until a delimiter is
+            found</li>
+        <li><code>Serial.parseInt()</code>, <code>Serial.parseFloat()</code> – Useful for reading numbers</li>
+    </ul>
+
+    <h2>Challenges</h2>
+    <p>I had some confusion with <code>Serial.readStringUntil()</code> needing a <code>char</code> instead of a string,
+        but I fixed it by using single quotes (e.g. <code>'\n'</code>).</p>
+
+    <h2>Code Snippets</h2>
+    <pre><code>
+void setup() {
+  Serial.begin(9600);
+  Serial.println("Enter your name:");
+}
+
+void loop() {
+  if (Serial.available()) {
+    String name = Serial.readStringUntil('\n');
+    Serial.print("Hello, ");
+    Serial.println(name);
+  }
+}
+    </code></pre>
+
+    <h2>Conclusion</h2>
+    <p>Receiving input from the Serial Monitor opened up new possibilities for interaction. I’m looking forward to
+        controlling LEDs or sensors using typed commands next.</p>
+</body>
+
+</html>
