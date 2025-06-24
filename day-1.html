@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 1 - Serial Monitor & Variables</title>
+</head>
+
+<body>
+    <h1>Day 1</h1>
+
+    <h2>Introduction</h2>
+    <p>Today I explored how the Serial Monitor works in Arduino and how variables help store data. It was my first
+        hands-on session, and I began understanding how communication between the Arduino and the computer happens.</p>
+
+    <h2>What I Did</h2>
+    <ul>
+        <li>Used <code>Serial.begin()</code> to start serial communication</li>
+        <li>Printed values to the Serial Monitor using <code>Serial.print()</code> and <code>Serial.println()</code>
+        </li>
+        <li>Declared and initialized variables of different types (int, float, char, bool)</li>
+    </ul>
+
+    <h2>New Concepts and Functions</h2>
+    <ul>
+        <li><code>Serial.begin(9600)</code> – Starts the Serial Monitor with a specific baud rate</li>
+        <li><code>Serial.print()</code> – Prints a message or variable to the Serial Monitor (same line)</li>
+        <li><code>Serial.println()</code> – Prints a message or variable and moves to a new line</li>
+        <li>Main data types in Arduino:
+            <ul>
+                <li><code>int</code> – Integers</li>
+                <li><code>char</code> – Characters</li>
+                <li><code>float</code> – Decimal numbers</li>
+                <li><code>bool</code> – Boolean values (true/false)</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Challenges</h2>
+    <p>I had a minor issue understanding the difference between <code>Serial.print()</code> and
+        <code>Serial.println()</code>, but testing them helped me see how the cursor moves with each.</p>
+
+    <h2>Code Snippets</h2>
+    <pre><code>
+void setup() {
+  Serial.begin(9600); // start serial communication
+  int myNumber = 5;
+  Serial.print("My number is: ");
+  Serial.println(myNumber);
+}
+
+void loop() {
+  // nothing here for now
+}
+    </code></pre>
+
+    <h2>Conclusion</h2>
+    <p>It was a good start to understanding how data moves between the Arduino and computer. I’m excited to try input
+        devices like buttons or sensors next.</p>
+</body>
+
+</html>
